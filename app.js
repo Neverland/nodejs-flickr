@@ -1,11 +1,12 @@
 
-	var express = require('express');
-	var routes = require('./routes');
-	var user = require('./routes/user');
-	var http = require('http');
-	var path = require('path');
-
-	var app = express();
+	var express = require('express'),
+		routes = require('./routes'),
+		user = require('./routes/user'),
+		search = require('./routes/search'),
+		http = require('http'),
+		path = require('path'),
+		http = require('http'),
+		app = express();
 
 	// all environments
 	app.set('port', process.env.PORT || 3000);
@@ -28,43 +29,11 @@
 
 	app.get('/', routes.index);
 	app.get('/users', user.list);
-
-		/*require('http').get('http://api.flickr.com/services/feeds/photos_public.gne?tags=cat&format=json&jsoncallback=?',function (res) {
-			var d = '';
-			res.setEncoding('utf8');
-			res.on('data', function (data) {
-
-				d += data;
-
-			}).on('end', function () {
-				//console.log(typeof(d))
-				d = d.replace(/^(\()|(\))$/g,'');
-				d = JSON.parse('{"root":'+d+'}')
-				console.log(d.root.title)
-			})
-
-		}).on('error', function () {
-
-		})*/
 	app.get('/search', function (q, s, n) {
-		require('./routes/search')(q, s, n);
+		search(q, s, http);
 	});
-	/*app.get('/search', function (q, s, n) {
-		require('./search.js')(r, function (data) {
-			//console.log
-			if(data.root.items.length == 0) {
-				s.render('error');
-				return;
-			}
-			s.locals.title = 'Flickr:' +q.query.q;
-			s.render('search', data);
 
-		}, function () {
 
-			s.render('error');
-
-		})
-	})*/
 
 
 
