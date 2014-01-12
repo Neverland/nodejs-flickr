@@ -50,6 +50,10 @@
 	app.get('/search', function (q, s, n) {
 		require('./search.js')(q.query.q, function (data) {
 			//console.log
+			if(data.root.items.length == 0) {
+				s.render('error');
+				return;
+			}
 			s.locals.title = 'Flickr:' +q.query.q;
 			s.render('search', data);
 

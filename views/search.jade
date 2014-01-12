@@ -4,11 +4,12 @@ block content
     hr
     each val, index in root.items
         dl
+            dt #{val.title}
             dd
                 ul
                     li
                         a(href=val.link)
-                            img(src=val.media.m)
+                            img.img-thumbnail(src=val.media.m width="200" height="160")
                     //-li !{val.description}
                     li #{val.author}
-            dt #{val.title}
+            dd #{val.date_taken}
