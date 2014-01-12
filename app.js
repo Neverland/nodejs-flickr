@@ -46,9 +46,11 @@
 		}).on('error', function () {
 
 		})*/
-
 	app.get('/search', function (q, s, n) {
-		require('./search.js')(q.query.q, function (data) {
+		require('./routes/search')(q, s, n);
+	});
+	/*app.get('/search', function (q, s, n) {
+		require('./search.js')(r, function (data) {
 			//console.log
 			if(data.root.items.length == 0) {
 				s.render('error');
@@ -62,7 +64,7 @@
 			s.render('error');
 
 		})
-	})
+	})*/
 
 
 
