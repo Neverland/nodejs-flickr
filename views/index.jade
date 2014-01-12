@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1 flickr
+    p Please enter your search term;
+
+    form(action="/search" method="get" enctype="multipart/form-data")
+        input(type="text" name="q" required="required" autocomplete="off")
+        button Send file!

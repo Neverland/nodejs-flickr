@@ -1,0 +1,13 @@
+extends layout
+block content
+    h1 #{root.title}
+    each val, index in root.items
+        dl
+            dd
+                ul
+                    li
+                        a(href=val.link)
+                            img(src=val.media.m)
+                    //-li !{val.description}
+                    li #{val.author}
+            dt #{val.title}
