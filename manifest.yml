@@ -1,0 +1,19 @@
+--- 
+applications: 
+  .: 
+    services: 
+      mongo-game-01: 
+        type: mongodb
+      mongodb2-869c8: 
+        type: mongodb2
+    instances: 1
+    url: ${name}.${target-base}
+    infra: ap-aws
+    framework: 
+      info: 
+        exec: 
+        description: Node.js Application
+        mem: 64M
+      name: node
+    name: nodejs-flickr
+    mem: 64M
