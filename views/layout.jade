@@ -3,7 +3,11 @@ html
     head
         title #{title}
         link(rel='stylesheet', href='/style/style.css')
-        link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
         script(type='text/javascript', src='/bootstrap/dist/js/bootstrap.js')
+        base(target="_blank")
+        block static
     body
+        a(href="/") Home
+        hr
         block content

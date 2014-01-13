@@ -3,9 +3,13 @@
  */
 
 	module.exports = function (q, s, http) {
-		require(process.cwd()+'/page/search')(q.query.q, http, function (data) {
+
+		q = q.query.q;
+
+		require(process.cwd()+'/page/search')(q, http, function (data) {
 			//console.log
-			s.locals.title = 'Flickr:' +q.query.q;
+			s.locals.title = 'Flickr: '+q;
+			s.locals.query = q;
 			s.render('search', data);
 
 		}, function () {

@@ -4,11 +4,7 @@ block content
     h1 flickr
     p Please enter your search term;
 
-    form(action="/search" method="get" enctype="multipart/form-data" role="form")
-        div.input-group
-            input.form-control(type="text" name="q" required="required" autocomplete="off")
-            span.input-group-btn
-                button(class="btn btn-default" type="submit") search!
+    include ./search_form
 
 
 

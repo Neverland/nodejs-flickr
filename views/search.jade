@@ -1,15 +1,25 @@
 extends layout
+block static
+    link(rel='stylesheet',href="/style/search.css")
+
 block content
-    h1 #{root.title}
+    h1 The keywords
+        span - #{query}
+
     hr
-    each val, index in root.items
-        dl
-            dt #{val.title}
-            dd
-                ul
-                    li
-                        a(href=val.link)
-                            img.img-thumbnail(src=val.media.m width="200" height="160")
-                    //-li !{val.description}
-                    li #{val.author}
-            dd #{val.date_taken}
+    include ./search_form
+    hr
+    section#content.box
+        each val, index in root.items
+            dl
+                dt #{val.title}
+                dd
+                    ul
+                        li
+                            a(href=val.link)
+                                img.img-thumbnail(src=val.media.m width="200" height="160")
+                        //-li !{val.description}
+                        li #{val.author}
+                dd #{val.date_taken}
+
+    include ./copyright

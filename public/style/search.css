@@ -1,0 +1,21 @@
+/**
+ * User: enix@foxmail.com
+ * Date: 14-1-14
+ * Time: 1:38
+ * To change this template use File | Settings | File Templates.
+ */
+
+.box {
+	width: 80%;
+	margin: 0 auto ;
+	overflow: hidden;
+	height: 1%;
+	clear: both;
+}
+h1 span {
+	color: deepskyblue;
+}
+#content {
+	-webkit-columns: 3 auto;
+
+}
